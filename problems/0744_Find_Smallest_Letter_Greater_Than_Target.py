@@ -1,17 +1,16 @@
 class Solution:
     def nextGreatestLetter(self, letters: list[str], target: str) -> str:
-        abc = "abcdefghijklmnopqrstuvwxyz"
-        abc_hm = {
-            
-        }
-        ind = 0
-        for let in abc:
-            abc_hm[let] = ind
-            ind+=1
-        for let in letters:
-            if abc_hm[let]>abc_hm[target]:
-                return let
-        return letters[0]
+        s = 0
+        end = len(letters)
+        while s<end:
+            mid = (s+end)//2
+            if letters[mid]>target:
+                end = mid
+            else:
+                s = mid+1
+        if s>=len(letters):
+            return letters[0]
+        return letters[s]
 
 c = Solution()
 print(c.nextGreatestLetter(["c","f","j"],"z"))
