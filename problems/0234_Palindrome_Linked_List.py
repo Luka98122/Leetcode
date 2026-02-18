@@ -4,7 +4,7 @@ class ListNode:
         self.next = next
 
 class Solution:
-    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+    def isPalindrome(self, head: ListNode) -> bool:
         ans = []
         
         curr = head
