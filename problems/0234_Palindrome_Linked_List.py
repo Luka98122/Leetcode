@@ -4,17 +4,14 @@ class ListNode:
         self.next = next
 
 class Solution:
-    def isPalindrome(self, head: ListNode) -> bool:
-        l_stuff = []
+    def isPalindrome(self, head: Optional[ListNode]) -> bool:
+        ans = []
         
-        while head:
-            l_stuff.append(head.val)
-            head = head.next
-        n = len(l_stuff)
-        for i in range(n//2+1):
-            if l_stuff[i] != l_stuff[n-1-i]:
-                return False
-        return True
+        curr = head
+        while curr:
+            ans.append(curr.val)
+            curr = curr.next
+        return ans == ans[::-1]
 
 c = Solution()
 print(c.isPalindrome())
