@@ -16,12 +16,11 @@ jobs:
 
       - name: Calculate problem count and update README
         run: |
-          # Count files in ./problems, excluding the directory itself
-          COUNT=$(find ./problems -maxdepth 1 -type f | wc -l)
+          COUNT=$(find problems -maxdepth 1 -type f | wc -l)
           echo "Found $COUNT problems."
           
-          # Use sed to replace the number inside the tags
-          sed -i "s|<solved_count>.*</solved_count>|<solved_count>$COUNT</solved_count>|g" README.md
+          # Replace the number after 'Problems Solved: '
+          sed -i "s|\(Problems Solved: \)[0-9]\+|\1$COUNT|" readme.md
 
       - name: Commit and push changes
         run: |
