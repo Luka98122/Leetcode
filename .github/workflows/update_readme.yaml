@@ -20,7 +20,7 @@ jobs:
           echo "Found $COUNT problems."
           
           # Replace the number after 'Problems Solved: '
-          sed -i "s|\(Problems Solved: \)[0-9]\+|\1$COUNT|" readme.md
+          sed -i "s|\(Problems Solved: \)[0-9]\+|\1$COUNT|" README.md
 
       - name: Commit and push changes
         run: |
