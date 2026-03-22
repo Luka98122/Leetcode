@@ -1,0 +1,31 @@
+name: Update Solved Count
+
+on:
+  push:
+    branches:
+      - main  # or your default branch name
+    paths:
+      - 'problems/**' # only run when files in the problems folder change
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Calculate problem count and update README
+        run: |
+          COUNT=$(find problems -maxdepth 1 -type f | wc -l)
+          echo "Found $COUNT problems."
+          
+          # Replace the number after 'Problems Solved: '
+          sed -i "s|\(Problems Solved: \)[0-9]\+|\1$COUNT|" README.md
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "docs: update problems count to $(find ./problems -maxdepth 1 -type f | wc -l)" || exit 0
+          git push
