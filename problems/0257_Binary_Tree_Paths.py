@@ -1,11 +1,11 @@
-# Definition for a binary tree node.
-#class TreeNode:
-#    def __init__(self, val=0, left=None, right=None):
-#        self.val = val
-#        self.left = left
-#        self.right = right
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
 class Solution:
-    def binaryTreePaths(self, root: Optional[TreeNode]) -> List[str]:
+    def binaryTreePaths(self, root: TreeNode) -> str:
         if not root:
             return []
         
@@ -25,10 +25,3 @@ class Solution:
         
         dfs(root, "")
         return result
-        
-c = Solution()
-
-a = TreeNode(3)
-a.left = TreeNode(2)
-a.right = TreeNode(1)
-print(c.binaryTreePaths(a))
