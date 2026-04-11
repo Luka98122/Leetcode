@@ -1,6 +1,16 @@
 from typing import List
 class Solution:
     def minimumDistance(self, nums: List[int]) -> int:
+        """
+        This problem is the same as #3740, but the
+        limit of the size of nums is increased from 
+        100 -> 10^5.
+        
+        My original solution is optimal enough to work
+        here too, no changes needed :)
+        
+        """
+        
         hm = {}
         
         res = 2**31 # 101 is also safe according to the problem
