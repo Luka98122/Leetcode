@@ -14,7 +14,7 @@ class Solution(): #A
                 
                 if abs(current_sum - target) < abs(closest_sum - target):
                     closest_sum = current_sum
-                    
+                
                 if current_sum < target:
                     left += 1
                 else:

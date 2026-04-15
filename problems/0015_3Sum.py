@@ -1,4 +1,4 @@
-class Solution:
+class Solution: #A
     def threeSum(self, nums: list[int]) -> list[list[int]]:
         res: set[tuple[int, int, int]] = set()
 
