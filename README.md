@@ -1,4 +1,5 @@
 # LeetCode Solutions in Python
+![LeetCode Stats](https://www.readmecodegen.com/api/leetcode-stats/lmarkovic24?theme=dark&acceptance=false&reputation=false&template=minimal)
 
 My personal solutions to problems from [LeetCode](https://leetcode.com) implemented in Python.
 This repository serves as a place to practice algorithms, data structures, and problem-solving techniques.
