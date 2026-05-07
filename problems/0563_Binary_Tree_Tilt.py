@@ -1,3 +1,4 @@
+from typing import Optional
 class Solution:
     def findTilt(self, root: Optional[TreeNode]) -> int:
         self.total_tilt = 0
